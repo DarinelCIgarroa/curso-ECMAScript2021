@@ -1,0 +1,33 @@
+@use 'anidacion';
+
+// Variables
+$color-principal: #ccc;
+$color-letra: green;
+body{
+    background: $color-principal;
+}
+
+h1{
+    color: $color-letra;
+}
+
+p{
+    color: $color-letra;
+}
+
+// Mixins
+@mixin caja_pesonalizada($fondo: white, $color: black) {
+    background-color: $fondo;
+    color: $color;
+    border: 1px solid black;
+    box-shadow: 0px 0px 2px black;
+    margin: 20px;
+    padding: 10px;
+}
+.caja{
+    @include caja_pesonalizada();
+}
+.caja2{
+    @include caja_pesonalizada(lightblue);
+}
+

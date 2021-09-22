@@ -1,0 +1,42 @@
+/* Anidacion */
+.caja h2 {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.caja p {
+  color: #005780;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-decoration: underline;
+}
+
+body {
+  background: #ccc;
+}
+
+h1 {
+  color: green;
+}
+
+p {
+  color: green;
+}
+
+.caja {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  box-shadow: 0px 0px 2px black;
+  margin: 20px;
+  padding: 10px;
+}
+
+.caja2 {
+  background-color: lightblue;
+  color: black;
+  border: 1px solid black;
+  box-shadow: 0px 0px 2px black;
+  margin: 20px;
+  padding: 10px;
+}
+
+/*# sourceMappingURL=styles.css.map */
