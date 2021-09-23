@@ -1,6 +1,6 @@
 let productos = [
     {
-        name: 'Jabón',
+        name: 'Jabon',
         precio: 50
     },
     {
@@ -24,10 +24,43 @@ const getProductos = () => {
         setTimeout(() => {
             resolve(productos);
             reject(Error("A ocurrido un error al cargar los productos"));
-        }, 1000);
+        }, 3000);
     });
 };
 
-getProductos().then(response => console.log(response))
+
+function comprarProducto (name)  {
+    return new Promise((resolve, reject) => {
+        console.log('Haciendo la compra...')
+        setTimeout(() => {
+            resolve({
+                name: name,
+            });
+            reject(Error("A ocurrido un error"))
+        }, 3000);
+    })
+};
+
+function procesarCompra(name){
+    console.log('producto comprado', name);
+    productos = productos.filter(element => element.name != name);
+
+    return productos;
+}
+
+getProductos().then(response => {
+        console.log('Productos disponibles: ', response);
+        return comprarProducto('Jabon');
+    })
+    .then(response => {
+        procesarCompra(response.name)
+        return comprarProducto('Shampoo')
+    })
+    .then(response => {
+        procesarCompra(response.name)
+    })
     .catch(error => console.error(error.message))
-    .finally(() => console.log("PROMESA FINALIZADA.."));
+    .finally( () => {
+        console.log('productos disponibles: ', productos);
+        console.log('PROMESA FINALIZADA...');
+    });
