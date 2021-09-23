@@ -17,12 +17,17 @@ let productos = [
     }
 ];
 
+
 const getProductos = () => {
     return new Promise((resolve, reject) => {
-        setTimeout( () => {
-            resolve(productos)
-        }, 200);
+        console.log('cargando...');
+        setTimeout(() => {
+            resolve(productos);
+            reject(Error("A ocurrido un error al cargar los productos"));
+        }, 1000);
     });
 };
 
-getProductos().then(response => console.log(response));
+getProductos().then(response => console.log(response))
+    .catch(error => console.error(error.message))
+    .finally(() => console.log("PROMESA FINALIZADA.."));
