@@ -11,7 +11,7 @@ for(let nombre of nombres){
     console.log('for of', nombre)
 }
 
-// For in -> va direncto al indice también se usa para recorrer los json
+// For in -> va directo al indice también se usa para recorrer los json
 for(let indice in nombres){
     console.log('for in', indice, nombres[indice])
 }
